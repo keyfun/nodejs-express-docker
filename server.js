@@ -1,5 +1,6 @@
 'use strict';
 
+var https = require('https');
 const express = require('express');
 
 // Constants
@@ -23,5 +24,7 @@ app.get('/webhook', function(req, res) {
   }  
 });
 
-app.listen(PORT, HOST);
+// app.listen(PORT, HOST);
+https.createServer(app).listen(PORT);
+
 console.log(`Running on http://${HOST}:${PORT}`);
