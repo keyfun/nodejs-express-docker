@@ -26,6 +26,12 @@ app.get('/', (req, res) => {
 
 
 // bot framework
+// Setup Restify Server
+var server = restify.createServer();
+server.listen(process.env.port || process.env.PORT || 3000, function () {
+   console.log('%s listening to %s', server.name, server.url); 
+});
+
 // Create chat connector for communicating with the Bot Framework Service
 var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
