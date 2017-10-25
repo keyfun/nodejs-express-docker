@@ -26,7 +26,7 @@ app.get('/webhook', function(req, res) {
   }  
 });
 
-https.createServer(app).listen(PORT);
+http.createServer(app).listen(PORT);
 app.use(forceSsl);
 
 console.log(`Running on http://${HOST}:${PORT}`);
