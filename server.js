@@ -1,6 +1,6 @@
 'use strict';
 
-var https = require('https');
+var forceSsl = require('express-force-ssl');
 const express = require('express');
 
 // Constants
@@ -24,7 +24,7 @@ app.get('/webhook', function(req, res) {
   }  
 });
 
-// app.listen(PORT, HOST);
-https.createServer(app).listen(PORT);
+app.listen(PORT, HOST);
+app.use(forceSsl);
 
 console.log(`Running on http://${HOST}:${PORT}`);
