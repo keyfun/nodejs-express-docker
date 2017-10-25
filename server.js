@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 // bot framework
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
+server.listen(process.env.port || process.env.PORT || PORT, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
 
@@ -222,7 +222,7 @@ function receivedPostback(event) {
 }
 
 
-http.createServer(app).listen(PORT);
+// http.createServer(app).listen(PORT);
 app.use(forceSsl);
 
 console.log(`Running on http://${HOST}:${PORT}`);
