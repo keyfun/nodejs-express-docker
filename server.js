@@ -4,6 +4,7 @@ var https = require('https');
 var http = require('http');
 var forceSsl = require('express-force-ssl');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Constants
 const PORT = 3000;
@@ -11,6 +12,9 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+app.use(bodyParser.urlencoded({"extended": false}));
+app.use(bodyParser.json());
+
 app.get('/', (req, res) => {
   res.send('Hello world abc\n');
 });
