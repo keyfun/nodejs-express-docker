@@ -61,47 +61,47 @@ var bot = new builder.UniversalBot(connector, function (session) {
 function getCardsAttachments(session) {
     return [
         new builder.HeroCard(session)
-            .title('Azure Storage')
-            .subtitle('Offload the heavy lifting of data center management')
-            .text('Store and help protect your data. Get durable, highly available data storage across the globe and pay only for what you use.')
+            .title('NeoStrata')
+            .subtitle('更生活膚啫喱面膜')
+            .text('守護毛孔第一步，就是清除老角質，令油脂順利排出！但磨砂顆粒粗糙，極易搓傷肌膚；用分子最小、深透力強的專利AHAs甘醇酸，能溶解老角質和多餘油脂，還能恢復28日更生週期，肌膚更細緻光滑，100%*用家見證成效！')
             .images([
-                builder.CardImage.create(session, 'https://docs.microsoft.com/en-us/azure/storage/media/storage-introduction/storage-concepts.png')
+                builder.CardImage.create(session, 'https://supappdev.neoderm.com.hk/PublicImages/ItemType/8203%20%28NS%20gel%20plus%29.png')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/storage/', 'Learn More')
+                builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/product/detail/701', '了解更多')
             ]),
 
         new builder.ThumbnailCard(session)
-            .title('DocumentDB')
-            .subtitle('Blazing fast, planet-scale NoSQL')
-            .text('NoSQL service for highly available, globally distributed apps—take full advantage of SQL and JavaScript over document and key-value data without the hassles of on-premises or virtual machine-based cloud database options.')
+            .title('Endocare')
+            .subtitle('強效活肌修復精華SCA40')
+            .text('西班牙地中海特種蝸牛的修復力有多神奇？研究發現，其分泌液能於短短48小時內，自體修復受傷組織至原有健康狀態！憑此成果，Endocare研創出SCA活肌修復因子，修護受損甚至老化肌膚細胞，刺激膠原母體不停新生，鞏固肌底彈力蛋白，提升彈性，顯著減淡皺紋。')
             .images([
-                builder.CardImage.create(session, 'https://docs.microsoft.com/en-us/azure/documentdb/media/documentdb-introduction/json-database-resources1.png')
+                builder.CardImage.create(session, 'https://supappdev.neoderm.com.hk/PublicImages/ItemType/312826%20%28Endocare%20Concentrate%20SCA40%29.png')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/documentdb/', 'Learn More')
+                builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/product/detail/702', '了解更多')
             ]),
 
         new builder.HeroCard(session)
-            .title('Azure Functions')
-            .subtitle('Process events with a serverless code architecture')
-            .text('An event-based serverless compute experience to accelerate your development. It can scale based on demand and you pay only for the resources you consume.')
+            .title('RevitaLash®')
+            .subtitle('激活美睫增生精華')
+            .text('要擁有電力十足的黃金10mm長立體美睫，就要像護膚一樣護養睫毛 。由美國眼科醫生研創的RevitaLash® Advanced，其突破性專利配方榮獲多項國際獎項，醫學實證能同步強化睫毛、減少折斷，重整睫毛生長週期，新生濃翹強韌睫毛，超過98%*用家見證21日真美睫復活。')
             .images([
-                builder.CardImage.create(session, 'https://azurecomcdn.azureedge.net/cvt-5daae9212bb433ad0510fbfbff44121ac7c759adc284d7a43d60dbbf2358a07a/images/page/services/functions/01-develop.png')
+                builder.CardImage.create(session, 'https://supappdev.neoderm.com.hk/PublicImages/ItemType/REV2979S%20Revitalash%20eye%20lash%201ml.png')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/functions/', 'Learn More')
+                builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/product/detail/348', '了解更多')
             ]),
 
         new builder.ThumbnailCard(session)
-            .title('Cognitive Services')
-            .subtitle('Build powerful intelligence into your applications to enable natural and contextual interactions')
-            .text('Enable natural and contextual interaction with tools that augment users\' experiences using the power of machine-based intelligence. Tap into an ever-growing collection of powerful artificial intelligence algorithms for vision, speech, language, and knowledge.')
+            .title('elyze RF深層擊脂療程')
+            .subtitle('針對難減部位，單極射頻深入皮下20mm脂肪層，發放46℃熱力縮小脂肪細胞，即現局部修形成效！')
+            .text('要擁有美好身形，不能盲目追求「瘦」，還要有凹凸有致的緊實曲線！不過要達到勻稱線條，也真不容易…無論如何努力運動和節食，也擺脫不了拜拜肉、肚腩、粗腿等惱人的局部脂肪！')
             .images([
-                builder.CardImage.create(session, 'https://azurecomcdn.azureedge.net/cvt-68b530dac63f0ccae8466a2610289af04bdc67ee0bfbc2d5e526b8efd10af05a/images/page/services/cognitive-services/cognitive-services.png')
+                builder.CardImage.create(session, 'https://supappdev.neoderm.com.hk/PublicImages/JTBD/elyze/JTBD_elyze_RF_banner1.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/cognitive-services/', 'Learn More')
+                builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/slimming/elyze', '了解更多')
             ])
     ];
 }
