@@ -43,7 +43,7 @@ server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
-  console.log('send message: %s', session.message.text); 
+  console.log('send message: %s', session); 
   session.send("You said: %s", session.message.text);
 });
 
@@ -227,3 +227,6 @@ function receivedPostback(event) {
 app.use(forceSsl);
 
 // console.log(`Running on http://${HOST}:${PORT}`);
+
+// clean log
+process.stdout.write('\033c');
