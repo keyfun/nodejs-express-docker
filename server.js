@@ -51,7 +51,7 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {
   console.log('send message: %s', session.message.text);
 
-  if (session.message.text === 'carousel') {
+  if (session.message.text.toLowerCase() === 'carousel') {
     sendCarousel(session);
   } else {
     session.send("You said: %s", session.message.text);
@@ -71,7 +71,7 @@ function getCardsAttachments(session) {
                 builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/product/detail/701', '了解更多')
             ]),
 
-        new builder.ThumbnailCard(session)
+        new builder.HeroCard(session)
             .title('Endocare')
             .subtitle('強效活肌修復精華SCA40')
             .text('西班牙地中海特種蝸牛的修復力有多神奇？研究發現，其分泌液能於短短48小時內，自體修復受傷組織至原有健康狀態！憑此成果，Endocare研創出SCA活肌修復因子，修護受損甚至老化肌膚細胞，刺激膠原母體不停新生，鞏固肌底彈力蛋白，提升彈性，顯著減淡皺紋。')
@@ -93,7 +93,7 @@ function getCardsAttachments(session) {
                 builder.CardAction.openUrl(session, 'https://supappdev.neoderm.com.hk/Web/jtbd/product/detail/348', '了解更多')
             ]),
 
-        new builder.ThumbnailCard(session)
+        new builder.HeroCard(session)
             .title('elyze RF深層擊脂療程')
             .subtitle('針對難減部位，單極射頻深入皮下20mm脂肪層，發放46℃熱力縮小脂肪細胞，即現局部修形成效！')
             .text('要擁有美好身形，不能盲目追求「瘦」，還要有凹凸有致的緊實曲線！不過要達到勻稱線條，也真不容易…無論如何努力運動和節食，也擺脫不了拜拜肉、肚腩、粗腿等惱人的局部脂肪！')
