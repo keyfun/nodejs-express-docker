@@ -90,6 +90,18 @@ var bot = new builder.UniversalBot(connector, [
     }
 ]);
 
+bot.dialog('flights', require('./flights'));
+bot.dialog('hotels', require('./hotels'));
+bot.dialog('support', require('./support'))
+    .triggerAction({
+        matches: [/help/i, /support/i, /problem/i]
+    });
+
+// log any bot errors into the console
+bot.on('error', function (e) {
+    console.log('And error ocurred', e);
+});
+
 function promptChoice(session) {
   // prompt for search option
   builder.Prompts.choice(
