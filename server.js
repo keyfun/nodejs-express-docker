@@ -11,6 +11,9 @@ const bodyParser = require('body-parser');
 var restify = require('restify');
 var builder = require('botbuilder');
 
+var dotenv = require('dotenv');
+dotenv.load();
+
 // Constants
 const PORT = 3000;
 const HOST = '0.0.0.0';
