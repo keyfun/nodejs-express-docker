@@ -230,3 +230,7 @@ function receivedPostback(event) {
 app.use(forceSsl);
 
 // console.log(`Running on http://${HOST}:${PORT}`);
+
+console.reset = function () {
+  return process.stdout.write('\033c');
+}
