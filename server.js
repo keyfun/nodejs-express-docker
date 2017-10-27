@@ -48,15 +48,53 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-var bot = new builder.UniversalBot(connector, function (session) {
-  console.log('send message: %s', session.message.text);
+var bot = new builder.UniversalBot(connector, [
+  function (session) {
+    console.log('send message: %s', session.message.text);
 
-  if (session.message.text.toLowerCase() === 'carousel') {
-    sendCarousel(session);
-  } else {
-    session.send("You said: %s", session.message.text);
-  }
-});
+    if (session.message.text.toLowerCase() === 'carousel') {
+      sendCarousel(session);
+    } else if (session.message.text.toLowerCase() === 'action') {
+      promptChoice(session);
+    } else {
+      session.send("You said: %s", session.message.text);
+    }
+  },
+  function (session, result) {
+        if (!result.response) {
+            // exhausted attemps and no selection, start over
+            session.send('Ooops! Too many attemps :( But don\'t worry, I\'m handling that exception and you can try again!');
+            return session.endDialog();
+        }
+
+        // on error, start over
+        session.on('error', function (err) {
+            session.send('Failed with message: %s', err.message);
+            session.endDialog();
+        });
+
+        // continue on proper dialog
+        var selection = result.response.entity;
+        switch (selection) {
+            case DialogLabels.Flights:
+                return session.beginDialog('flights');
+            case DialogLabels.Hotels:
+                return session.beginDialog('hotels');
+        }
+    }
+]);
+
+function promptChoice(session) {
+  // prompt for search option
+  builder.Prompts.choice(
+    session,
+    'Are you looking for a flight or a hotel?',
+    [DialogLabels.Flights, DialogLabels.Hotels],
+    {
+      maxRetries: 3,
+      retryPrompt: 'Not a valid option'
+    });
+}
 
 function getCardsAttachments(session) {
     return [
