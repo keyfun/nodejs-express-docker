@@ -63,7 +63,8 @@ var bot = new builder.UniversalBot(connector, [
     } else if (session.message.text.toLowerCase() === 'action') {
       promptChoice(session);
     } else {
-      session.send("You said: %s", session.message.text);
+      var datetime = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+      session.send("You said: %s at %s", session.message.text, datetime);
     }
   },
   function (session, result) {
